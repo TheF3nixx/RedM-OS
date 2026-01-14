@@ -1,0 +1,61 @@
+SECTION I: OVERVIEW
+The Reanimated Tactical Infantry Unit (RTIU) program—codenamed "Project Fallen Light"—is a classified 
+military initiative focused on the recovery, stabilization, and conditioning of deceased combatants for 
+reactivation in hostile scenarios. These units, colloquially known as Soldier-Class Zs, represent a new 
+tier of biological warfare agents that exhibit obedience, regeneration capacity, and adaptive memory reflexes 
+under tightly controlled environments.
+
+Contrary to public knowledge, RTIUs are not mindless undead. They are neurologically synchronized shells, 
+preserved via synthetic neuromodulation and reprogrammed using a proprietary signal matrix interface (SMI).
+
+Note: All mentions of “control frameworks” and “base protocol injectors” must be redacted in field briefings.
+
+SECTION II: PRE-CONDITIONING
+Prior to neuroreanimation, each subject undergoes the following stages:
+
+Cellular stasis optimization (CSO): Cryo-lock of key tissues and select neural clusters.
+Memory thread excision (MTE): Removal of all emotional and identity-linked engrams.
+Obedience grafting: Integration of a behavior module using encrypted harmonic pulses at 144.6 Hz, targeting 
+decayed synaptic receptors.
+
+Surprisingly, the parietal cortex appears crucial to post-mortem behavioral patterns, even when other 
+regions are necrotic. Experiments show higher aggression and coordination when this region remains intact.
+
+SECTION III: CONDITIONING CYCLE
+RTIUs undergo a Conditioning Cycle (CC) lasting 9–12 hours:
+
+Stimulus bombardment (visual/auditory cues, false battlefield loops)
+Pain-resilience flooding (synthetic overcharge to nociceptor networks)
+Reflex memory imprinting (combat drills via closed-loop sim injection)
+Language and directive reduction ("Yes/No/Target/Obey" vocabulary grafted via mnemonic bursts)
+Emotional bleaching (subject exhibits zero hesitation or empathy)
+
+Once stabilized, units are sealed within containment vaults and tagged via subdermal index glyphs. 
+These tags are non-numerical, often symbolic or derived from a language unknown to field staff (see Addendum G-04).
+
+Example tag: LOPYAJ-K’LASP-FEWIRM — suspected to be a mnemonic anchor or trigger phrase.
+
+SECTION IV: KNOWN FAILURES
+Despite a 72% deployment success rate, recurring anomalies persist:
+
+Phantom recall: Subjects halting mid-operation, muttering non-verbal sequences.
+Visual bleeding: Hemorrhaging from ocular sockets during synchronization drift.
+Aggression loop stalls: Subjects targeting "non-existent enemies", or mimicking human voices with no prompt.
+
+The pattern of these failures suggests an external resonance interfering with command protocols. 
+Investigations into the SMI interference remain inconclusive. Several engineers have raised concerns 
+about the "origin" of the signal matrix framework used, but no documentation exists identifying its original source.
+
+SECTION V: ETHICAL & OPERATIONAL SUPPRESSION
+All personnel assigned to RTIU conditioning must sign Amendment R-47, acknowledging the following:
+Any form of empathy or grief toward the units will result in disciplinary reassignment.
+No RTIU may be referred to by its original name or identity.
+Staff who report dreams or "cross-memory hallucinations" related to RTIUs are to be monitored and possibly reassigned to Facility ██.
+
+FINAL NOTES
+The RTIU program continues to evolve. While the public may never learn of these units' true origin, 
+our objectives remain clear: deployable, controllable infantry that do not question orders and do not fear death, 
+because they are beyond it.
+
+The system that governs them is not ours to understand.
+We are merely facilitators. 

@@ -1,0 +1,5 @@
+#ID-93X58d
+savedir=redmind(default)
+allowdelete=true
+maxfiles=infinite
+realdelete=disabled

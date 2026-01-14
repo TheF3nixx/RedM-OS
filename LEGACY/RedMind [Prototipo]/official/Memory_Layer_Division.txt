@@ -1,0 +1,20 @@
+[SYSTEM NOTICE: MEMORY LAYER DIVISION]
+Attention, operator: Not all changes you make are stored permanently.
+RedM-OS is designed on a dual-layer memory architecture:
+
+-- SHELL MEMORY --
+This is the operational surface of the system. Here you execute commands, 
+load temporary traces, and manipulate structures in real time. 
+Everything that resides on this layer is volatile: it is automatically restarted 
+or purged if the system is shut down, rebooted or enters emergency mode.
+
+-- CORE MEMORY --
+Only certain elements access this zone: files written manually by the user (.mem, .old, .rmt, etc.) 
+or configurations explicitly stored via write protocols.
+This layer persists even after reboots or failure events.
+
+· Do you want your changes to last?
+You must create, link or modify physical files within the internal directories. 
+Everything else exists only in the “momentary memory” of the system.
+
+"RedM-OS does not forget. But you can. Write it down."

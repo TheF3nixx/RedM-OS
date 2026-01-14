@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RedMind Visual Terminal</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #00ffcc;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        .terminal {
+            padding: 20px;
+            border: 3px solid #00ffcc;
+            margin: 40px auto;
+            max-width: 800px;
+            background-color: #101010;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+
+        h1 {
+            color: #00ffff;
+            text-align: center;
+            border-bottom: 1px solid #00ffcc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #003333;
+            color: #00ffcc;
+            border: 2px solid #00ffcc;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: monospace;
+            transition: 0.2s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #00ffcc;
+            color: #000;
+        }
+
+        .log {
+            background-color: #000;
+            padding: 10px;
+            height: 200px;
+            overflow-y: scroll;
+            border: 1px solid #00ffcc;
+            font-size: 14px;
+        }
+
+        .status-bar {
+            background-color: #003333;
+            border: 1px solid #00ffcc;
+            padding: 5px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="terminal">
+    <h1>RedMind Visual Terminal</h1>
+
+    <div class="controls">
+        <button onclick="logAction('System Reboot Initiated')">Reboot</button>
+        <button onclick="logAction('Lockdown Engaged')">Lockdown</button>
+        <button onclick="logAction('Node Released: #3')">Release Node</button>
+        <button onclick="logAction('Protocol ALPHA Executed')">Run Protocol</button>
+        <button onclick="logAction('Emergency Signal Sent')">Emergency Signal</button>
+    </div>
+
+    <div class="log" id="logWindow">
+        [BOOT] RedMind Terminal Initialized...
+    </div>
+
+    <div class="status-bar" id="statusBar">
+        STATUS: ONLINE
+    </div>
+</div>
+
+<script>
+    function logAction(message) {
+        const logWindow = document.getElementById("logWindow");
+        const time = new Date().toLocaleTimeString();
+        logWindow.innerHTML += `<br>[${time}] ${message}`;
+        logWindow.scrollTop = logWindow.scrollHeight;
+        
+        if (message.includes("Lockdown")) {
+            document.getElementById("statusBar").innerText = "STATUS: LOCKDOWN";
+        } else if (message.includes("Reboot")) {
+            document.getElementById("statusBar").innerText = "STATUS: REBOOTING...";
+        } else if (message.includes("Emergency")) {
+            document.getElementById("statusBar").innerText = "STATUS: EMERGENCY SIGNAL SENT";
+        }
+    }
+</script>
+
+</body>
+</html>

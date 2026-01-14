@@ -1,0 +1,7 @@
+code   | name         | manufacturer            | description                                                 | stage                   | side_effects
+-------+--------------+--------------------------+-------------------------------------------------------------+--------------------------+--------------------------------------------
+VX-N88 | NeuroVanish  | JottaLix Pharmaceuticals | Neural suppressant causing temporary obedience and memory...| Phase 3                 | Blackouts, speech delay, compulsive laughter
+KRG-5  | CryoFlow     | Kryogenetics             | Cellular cryostasis serum for emergency hibernation under...| Approved (Internal Use) | Severe frostburn if not injected intravenously
+NB-T3  | BioBond      | NovaVita Industries      | Nanite-based serum enabling temporary AI-host merge.        | Phase 1                 | Seizures, nosebleeds, identity dissociation
+WL-M12 | Memodust     | Wellspring Labs          | Spore-like compound causing retrograde memory formation...  | Banned (Still in use)   | Involuntary memory duplication, induced psychosis
+

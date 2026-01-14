@@ -1,0 +1,14 @@
+Node 11 – Reboot Loop Analysis
+
+Total reboots in last 24h: 231
+Longest uptime: 3 minutes
+
+Terminal message during boot:
+
+“You again?”
+
+Logs suggest user memory echo might be re-triggering loop.
+
+Suggested fix: “Apologize to the system.”
+
+Status: Unresolved

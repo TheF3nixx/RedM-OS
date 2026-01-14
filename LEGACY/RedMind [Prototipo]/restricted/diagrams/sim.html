@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RedMind - Simulation Diagram</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+    }
+    canvas {
+      margin-top: 50px;
+    }
+    h1 {
+      margin-top: 30px;
+      color: #0ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>SIMULATION STABILITY MONITOR</h1>
+  <canvas id="simChart" width="600" height="400"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('simChart').getContext('2d');
+    const simChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['00:00', '00:30', '01:00', '01:30', '02:00', '02:30'],
+        datasets: [{
+          label: 'Stability Level (%)',
+          data: [98, 94, 85, 62, 47, 29],
+          borderColor: 'red',
+          backgroundColor: 'rgba(255,0,0,0.2)',
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            min: 0,
+            max: 100,
+            ticks: {
+              color: 'white'
+            }
+          },
+          x: {
+            ticks: {
+              color: 'white'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: 'white'
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

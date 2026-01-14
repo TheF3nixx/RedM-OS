@@ -1,0 +1,7 @@
+id | title | description | level | date_occurred | related_facility
+----+---------------------------+--------------------------------------------------------------------+-------+---------------+--------------------
+101 | Subject 019 escaped | Subject broke containment after exposure to VX-N88 drug | 5 | 2024-04-13 | Sector 4B
+102 | Memodust overload | Memodust dosage caused multiple simultaneous psychoses | 4 | 2024-01-22 | Neuromed A Silo
+103 | Cryo Chamber failure | Hibernation protocol failed; subject died instantly | 3 | 2023-11-30 | KryoVault B-4
+104 | External Infiltration | Unauthorized access to main gene server | 5 | 2023-12-10 | RedMind Institute
+105 | Z Protocol Activation | BioBond test activated latent artificial personality | 5 | 2024-05-07 | NovaVita Site Zeta

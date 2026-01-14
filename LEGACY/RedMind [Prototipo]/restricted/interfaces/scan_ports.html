@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RedMind - Port Scan</title>
+  <style>
+    body {
+      background-color: #0b0b0b;
+      color: #ff3c3c;
+      font-family: monospace;
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      color: #ff3c3c;
+      margin-bottom: 30px;
+    }
+    .progress {
+      width: 100%;
+      background-color: #222;
+      border: 1px solid #444;
+      height: 30px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background-color: #ff3c3c;
+      width: 0%;
+      transition: width 0.2s;
+    }
+    .percentage {
+      font-size: 16px;
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    .logs {
+      border-top: 1px solid #444;
+      padding-top: 15px;
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>[ REDMIND SECURE PORT SCAN ]</h1>
+  <div class="percentage" id="percent">0%</div>
+  <div class="progress">
+    <div class="progress-bar" id="bar"></div>
+  </div>
+  <div class="logs" id="log"></div>
+
+  <script>
+    const log = document.getElementById("log");
+    const bar = document.getElementById("bar");
+    const percent = document.getElementById("percent");
+
+    const steps = [
+      "Initializing scan protocol...",
+      "Resolving internal subsystems...",
+      "Scanning ports 20-30...",
+      "Bypassing internal firewall nodes...",
+      "Scanning ports 80, 443, 8080...",
+      "Detecting unknown services on high ports...",
+      "Found anomaly in port 1551 - pending analysis...",
+      "Finalizing encryption checks...",
+      "Scan completed. Integrity stable."
+    ];
+
+    let i = 0;
+    let prog = 0;
+
+    const interval = setInterval(() => {
+      if (i < steps.length) {
+        const newPercent = Math.min(100, Math.floor(((i + 1) / steps.length) * 100));
+        bar.style.width = newPercent + "%";
+        percent.textContent = newPercent + "%";
+        log.textContent += steps[i] + "\n";
+        i++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 700);
+  </script>
+</body>
+</html>

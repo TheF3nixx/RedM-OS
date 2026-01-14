@@ -1,0 +1,8 @@
+id | full_name         | age | company                | specialization                        | clearance_level | active | last_known_location
+---+--------------------+-----+------------------------+----------------------------------------+------------------+--------+------------------------------------------
+1  | Dr. Emilia Voss    | 47  | Elmore Biotech         | Synthetic Organ Engineering            | 4                | true   | Sector 7 Research Bunker
+2  | Dr. Lucas Menéndez | 39  | JottaLix Pharmaceuticals| Experimental Vaccinology               | 4                | true   | Facility Delta-03
+3  | Dr. Hana Shimizu   | 52  | Kryogenetics           | Cryostasis Protocol Design             | 4                | false  | Missing - last ping at CryoVault B-4
+4  | Dr. Declan Rowe    | 44  | NovaVita Industries    | Genetic Splicing & AI Integration      | 4                | true   | NovaVita Site Zeta
+5  | Dr. Mireya Álvarez | 58  | Wellspring Labs        | Neural Memory Cultivation              | 4                | true   | Memory Farm 09-A
+

@@ -1,0 +1,9 @@
+#ID-SYS001
+name=RedM-OS
+version=Beta-3
+bootmode=default(-normalmode)
+numberofcommands=15
+rootpdir=undefined
+rootvdir=redmind
+ghostshell=active
+vault=closed

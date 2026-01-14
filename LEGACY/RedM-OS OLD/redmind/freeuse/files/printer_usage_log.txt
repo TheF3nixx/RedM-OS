@@ -1,0 +1,15 @@
+A28 printer usage log (secondary warehouse)
+
+▸ Total pages printed this week: 284
+▸ Pages requested by registered users: 0
+▸ Identifiable documents: 0
+
+Most commonly printed content:
+
+Nonsensical forms
+Words such as “SHOUT,” “MIRROR,” “HOT”
+
+Is this a spool error or interference from an external device?
+
+Technical note:
+“We have unplugged the printer. It continues to print.”

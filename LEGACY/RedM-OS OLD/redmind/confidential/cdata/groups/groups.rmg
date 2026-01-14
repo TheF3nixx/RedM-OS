@@ -1,0 +1,4 @@
+::DEV::Total access to the system but without ROOT access. Can modify the internal code and execute some exclusive ROOT commands.
+
+::STAFF::Can access internal staff utilities and sensitive logs.
+
