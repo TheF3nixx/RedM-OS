@@ -5,7 +5,7 @@ echo ================================
 
 git add .
 git commit -m "Auto commit"
-git push
+git push -u origin main --force
 
 echo ================================
 echo Listo. No la has liado.
