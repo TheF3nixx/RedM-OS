@@ -15,12 +15,12 @@ public class CreateFile implements Command{
 
     @Override
     public String getDescription() {
-        return "";
+        return "Creates an empty file";
     }
 
     @Override
     public String getUsage() {
-        return "";
+        return "cfile <filename> <extension>";
     }
 
     @Override

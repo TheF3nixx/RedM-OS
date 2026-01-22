@@ -1,10 +1,14 @@
 package System;
 
+import java.util.EnumMap;
+
 public class SystemState {
     private static boolean booted = false;
     private static SystemMode currentMode = SystemMode.NORMAL;
     private static final long BOOT_TIME = System.currentTimeMillis();
+    private static final EnumMap<SystemCapabilities, Boolean> capability = new EnumMap<>(SystemCapabilities.class);
     
+    //BOOT
     public static void setBooted(boolean value){
         booted = value;
     }
@@ -13,6 +17,7 @@ public class SystemState {
         return booted;
     } 
     
+    //MODO
     public static void setMode(SystemMode mode){
         currentMode = mode;
     }
@@ -24,16 +29,9 @@ public class SystemState {
     public static boolean is(SystemMode mode){
         return currentMode == mode;
     }
-     
-    public static long getUptime(){
-        return (System.currentTimeMillis() - BOOT_TIME)/1000;
-    }
-
-    public static String echo(String msg){
-        return "[SYSTEM]> " + msg;
-    }
     
-    //DEPENDE DEL MODO QUE ESTÉ, PARA LOS COMANDOS LUEGO
+    
+    //DEPENDE DEL MODO QUE ESTÉ
     public static boolean isRecovery(){
         return currentMode == SystemMode.RECOVERY;
     }
@@ -53,6 +51,43 @@ public class SystemState {
     public static boolean isCrashed(){
         return currentMode == SystemMode.CRASHED;
     }
-    
-    
+
+    //MISC DE ESTADO
+    public static long getUptime(){
+        return (System.currentTimeMillis() - BOOT_TIME)/1000;
+    }
+
+    public static String echo(String msg){
+        return "[SYSTEM]> " + msg;
+    }
+
+    //CAPACIDADES DEL SISTEMA
+    public static boolean enableAll(){
+        for(SystemCapabilities cap : SystemCapabilities.values()){
+            capability.put(cap, true);
+        }
+        return true;
+    }
+
+    public static boolean disableAll(){
+        for(SystemCapabilities cap : SystemCapabilities.values()){
+            capability.put(cap, false);
+        }
+        return true;
+    }
+
+    public static boolean hasCapability(SystemCapabilities c){
+        return capability.get(c);
+    }
+
+    public static boolean enableCapability(SystemCapabilities c){
+        capability.put(c, true);
+        return true;
+    }
+
+    public static boolean disableCapability(SystemCapabilities c){
+        capability.put(c, false);
+        return true;
+    }
+
 }

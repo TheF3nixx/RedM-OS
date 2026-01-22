@@ -79,15 +79,19 @@ public class ErrorHandler {
                 IO.error("[ERROR: RM-024]> Unknown command: " + detail);
                 break;
             case "025":
-                IO.error("ERROR: RM-025]> Missing argument(s).");
+                IO.error("[ERROR: RM-025]> Missing argument(s).");
                 break;
             case "026":
+                IO.error("[ERROR: RM-026]> State must be ON or OFF");
                 break;
             case "027":
+                IO.error("[ERROR: RM-027]> You cannot do that in this precise moment, pal.");
                 break;
             case "028":
+                IO.error("[ERROR: RM-028]> Category does not exist: " + detail);
                 break;
             case "029":
+                IO.error("[ERROR: RM-029]> Capability does not exist: " + detail);
                 break;
             case "030":
                 break;

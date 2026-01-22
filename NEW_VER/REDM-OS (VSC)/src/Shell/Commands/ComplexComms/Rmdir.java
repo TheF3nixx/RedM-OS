@@ -15,12 +15,12 @@ public class Rmdir implements Command{
 
     @Override
     public String getDescription() {
-        return "";
+        return "Deletes a directory";
     }
 
     @Override
     public String getUsage() {
-        return "";
+        return "rmdir <dirName>";
     }
 
     @Override

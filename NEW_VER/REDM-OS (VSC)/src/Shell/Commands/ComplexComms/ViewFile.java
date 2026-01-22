@@ -15,12 +15,12 @@ public class ViewFile implements Command{
 
     @Override
     public String getDescription() {
-        return "";
+        return "Views the total content of a file on screen";
     }
 
     @Override
     public String getUsage() {
-        return "";
+        return "view <filename>";
     }
 
     @Override

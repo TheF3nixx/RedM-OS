@@ -1,13 +1,13 @@
 package Managers;
 
 import java.util.HashMap;
+import java.util.Set;
+import java.util.TreeSet;
 
 import Shell.Commands.*;
 import Shell.Commands.ComplexComms.*;
 
-import System.SystemInfo;
-import System.SystemMisc;
-import System.SystemState;
+import System.*;
 import IO.IO;
 
 public class CommandManager {
@@ -40,44 +40,63 @@ public class CommandManager {
         c.execute(p.args(), p.flags());
     }
 
+    public static Command getComplexCommand(String name) {
+        return complex.get(name);
+    }
+
+    public static boolean isSimpleCommand(String name){
+        return simple.containsKey(name);
+    }
+
+    public static Set<String> getAllCommandNames(){
+        Set<String> all = new TreeSet<>();
+        all.addAll(simple.keySet());
+        all.addAll(complex.keySet());
+        return all;
+    }
+
+    //LOS COMANDOS EN SÍ
+
     public static void init(){
         //COMANDOS SIN ARGUMENTOS
-        register("uptime", () -> {
-            IO.output("Uptime (seconds): " + SystemState.getUptime());
-        });
-        register("ld", () -> {
-            FS.FSDirectories.ld();
-        });
-        register("pwd", () -> {
-            FS.FSDirectories.pwd();
-        });
         register("-help", () -> {
             help();
+        });
+        register("sysinfo", () -> {
+            SystemInfo.getAllInfo();
+        });
+        register("motd", () -> {
+            SystemMisc.motd();
+        });
+        register("idle", () -> {
+            IO.pause("[SYSTEM]> Session paused.");;
+        });
+        register("clear", () -> {
+            IO.clear();
+        });
+        register("date", () -> {
+            SystemMisc.date();
+        });
+        register("uptime", () -> {
+            IO.output("Uptime (seconds): " + SystemState.getUptime());
         });
         register("sysmode", () -> {
             IO.output("Current system mode: " + SystemState.getMode());
         });
-        register("sysinfo", () -> {
-            SystemInfo.getAllInfo();
+        register("wd", () -> {
+            FS.FSDirectories.pwd();
+        });
+        register("ld", () -> {
+            FS.FSDirectories.ld();
+        });
+        register("status", () -> {
+            SystemStatus.execute();//wip
         });
         register("logout", () -> {
             IO.pulseLoader("Shutting down...", 30, 120);
             IO.output("[SYSTEM]> Shutted down successfully.");
             System.exit(0);
         });
-        register("motd", () -> {
-            SystemMisc.motd();
-        });
-        register("clear", () -> {
-            IO.clear();
-        });
-        register("idle", () -> {
-            IO.pause("[SYSTEM]> Session paused.");;
-        });
-        register("date", () -> {
-            SystemMisc.date();
-        });
-        
         //COMANDOS CON ARGUMENTOS
         register(new Cd());
         register(new Mkdir());
@@ -90,6 +109,8 @@ public class CommandManager {
         register(new RestoreFile());
         register(new MoveFile());
         register(new ViewFile());
+        register(new HandBook());
+        register(new Toggle());
 
         //COMANDOS INÚTILES PERO FÁSILES
         register(new Echo());
@@ -97,7 +118,8 @@ public class CommandManager {
     }
 
     public static void help(){
-        IO.output("-----AVAILABLE COMMANDS (22)-----");
+        IO.output("-----AVAILABLE COMMANDS: 19-----");
+        IO.output("--GENERAL--");
         IO.output("sysinfo");
         IO.output("motd");
         IO.output("idle");
@@ -105,21 +127,25 @@ public class CommandManager {
         IO.output("date");
         IO.output("uptime");
         IO.output("sysmode");
-        IO.output("pwd");
+        IO.output("wd");
         IO.output("ld");
         IO.output("echo [text]");
+        IO.output("hb [command]");//se irá modificando a medida que se vayan añadiendo comandos/flags
+        IO.output("status");//se irá "engordando" conforme se vayan metiendo features
+        IO.output("--DIRECTORIES AND FILES--");
         IO.output("cd [directory]");
         IO.output("mkdir [directoryName]");
         IO.output("rmdir [directoryName]");
         IO.output("cfile [filename] [extension]");
         IO.output("write [filename]");
-        IO.output("copy [source] [target]");
+        IO.output("rep [source] [target]");
         IO.output("dfile [filename]");
         IO.output("destroy [filename]");
         IO.output("restore [filename]");
-        IO.output("move [source] [filename]");
+        IO.output("shift [source] [filename]");
         IO.output("view [filename]");
-        IO.output("");
+        IO.output("--MISC--");
+        IO.output("toggle [something] ON/OFF");//se irá modificando a medida que se vayan añadiendo comandos
         IO.output("logout");
     }
 

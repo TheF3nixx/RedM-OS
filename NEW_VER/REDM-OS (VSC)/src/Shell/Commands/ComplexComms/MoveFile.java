@@ -10,17 +10,23 @@ import Shell.Commands.Command;
 public class MoveFile implements Command{
     @Override
     public String getName() {
-        return "move";
+        return "shift";
     }
 
     @Override
     public String getDescription() {
-        return "";
+        return "Moves one archive to another position";
     }
 
     @Override
     public String getUsage() {
-        return "";
+        return "shift <origin> <target>";
+    }
+
+    public List<String> getNotes(){
+        return List.of(
+            "Pretty much like the 'rep' command..."
+        );
     }
 
     @Override

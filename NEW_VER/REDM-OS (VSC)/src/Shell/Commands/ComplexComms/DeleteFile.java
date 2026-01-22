@@ -15,12 +15,12 @@ public class DeleteFile implements Command{
 
     @Override
     public String getDescription() {
-        return "";
+        return "Sends the target archive to the trash folder, not erasing it completely";
     }
 
     @Override
     public String getUsage() {
-        return "";
+        return "dfile <target>";
     }
 
     @Override

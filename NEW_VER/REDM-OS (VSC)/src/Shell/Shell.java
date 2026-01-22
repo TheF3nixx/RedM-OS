@@ -7,6 +7,8 @@ import System.*;
 
 public class Shell{
     public static void main(String[] args){
+        //Activa todas las capacidades del sistema al iniciar
+        SystemState.enableAll();
         //La pantalla de booteo
         IO.output("[RedMind Process Terminal]");
         IO.output("Please, insert a valid boot command to enter the system.");
@@ -52,7 +54,7 @@ public class Shell{
         while(true){
             String inputCommand = IO.input("> ");
             CommandManager.execute(inputCommand);
-        }
+        }   
         
     }
 

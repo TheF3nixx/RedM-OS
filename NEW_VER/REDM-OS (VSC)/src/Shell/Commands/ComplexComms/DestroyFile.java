@@ -15,12 +15,18 @@ public class DestroyFile implements Command{
 
     @Override
     public String getDescription() {
-        return "";
+        return "Deletes permanently an archive, without confirmation";
     }
 
     @Override
     public String getUsage() {
-        return "";
+        return "destroy <archive>";
+    }
+
+    public List<String> getNotes(){
+        return List.of(
+            "This command is irreversible and does not send the archive to trash"
+        );
     }
 
     @Override

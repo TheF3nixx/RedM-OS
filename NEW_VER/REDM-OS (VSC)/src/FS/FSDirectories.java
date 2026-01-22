@@ -14,7 +14,7 @@ public class FSDirectories {
     }
 
     public static void pwd() {
-        IO.output("[PWD]> " + SystemPaths.getCVP());
+        IO.output("[CurrentLocation]> " + SystemPaths.getCVP());
     }
 
     public static void cd(String name) {

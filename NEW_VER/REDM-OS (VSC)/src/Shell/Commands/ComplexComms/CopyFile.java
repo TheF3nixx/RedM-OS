@@ -10,17 +10,23 @@ import Shell.Commands.Command;
 public class CopyFile implements Command{
     @Override
     public String getName() {
-        return "copy";
+        return "rep";
     }
 
     @Override
     public String getDescription() {
-        return "";
+        return "Copies any archive from one point to another";
     }
 
     @Override
     public String getUsage() {
-        return "";
+        return "rep <origin> <target>";
+    }
+
+    public List<String> getNotes(){
+        return List.of(
+            "Supports absolute routes"
+        );
     }
 
     @Override

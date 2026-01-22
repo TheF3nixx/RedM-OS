@@ -16,12 +16,12 @@ public class Mkdir implements Command{
 
     @Override
     public String getDescription() {
-        return "";
+        return "Creates a directory";
     }
 
     @Override
     public String getUsage() {
-        return "";
+        return "mkdir <dirName>";
     }
 
     @Override

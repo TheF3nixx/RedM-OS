@@ -15,12 +15,18 @@ public class RestoreFile implements Command{
 
     @Override
     public String getDescription() {
-        return "";
+        return "If an archive is in the trash bin, this command restores it to its original position";
     }
 
     @Override
     public String getUsage() {
-        return "";
+        return "restore <archive>";
+    }
+
+    public List<String> getNotes(){
+        return List.of(
+            "To do this, you must be INSIDE the trash bin, on the phisical files part, otherwise it will not work."
+        );
     }
 
     @Override

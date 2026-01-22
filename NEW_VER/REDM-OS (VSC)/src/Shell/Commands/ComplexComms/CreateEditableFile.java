@@ -15,12 +15,12 @@ public class CreateEditableFile implements Command{
 
     @Override
     public String getDescription() {
-        return "";
+        return "Creates an interactive file, which you can edit in real time";
     }
 
     @Override
     public String getUsage() {
-        return "";
+        return "write <filename>";
     }
 
     @Override

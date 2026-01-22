@@ -16,12 +16,12 @@ public class Echo implements Command{
 
     @Override
     public String getDescription() {
-        return "";
+        return "Tests if the system answers back";
     }
 
     @Override
     public String getUsage() {
-        return "";
+        return "echo <text>";
     }
 
     @Override
