@@ -97,7 +97,7 @@ public class CommandManager {
     }
 
     public static void help(){
-        IO.output("-----AVAILABLE COMMANDS-----");
+        IO.output("-----AVAILABLE COMMANDS (22)-----");
         IO.output("sysinfo");
         IO.output("motd");
         IO.output("idle");
