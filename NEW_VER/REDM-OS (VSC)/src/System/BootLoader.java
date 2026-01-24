@@ -251,7 +251,7 @@ public class BootLoader{
                 for (String l : lines) IO.output("[CRASHLOG] " + l);
 
             }catch(IOException e){
-                ErrorHandler.trigger("005", "recoveryLog.rc");
+                ErrorHandler.trigger(ErrorC.FILE_NOT_FOUND, "recoveryLog.rc");
             }
 
             delay(500);

@@ -2,6 +2,7 @@ package FS;
 
 import IO.IO;
 import Managers.ErrorHandler;
+import System.ErrorC;
 import System.SystemPaths;
 import java.io.File;
 import java.io.IOException;
@@ -34,11 +35,11 @@ public class FSDirectories {
                 SystemPaths.setCVP(newCVP);
                 IO.output("[SYSTEM]> Moved into " + targetReal.getName());
             } else {
-                ErrorHandler.trigger("009", name);
+                ErrorHandler.trigger(ErrorC.CAN_NOT_ACCESS_DIRECTORY, name);
             }
 
         } catch (IOException e) {
-            ErrorHandler.trigger("008", name);
+            ErrorHandler.trigger(ErrorC.ERROR_ACCESSING_DIRECTORY, name);
         }
     }
 
@@ -68,21 +69,21 @@ public class FSDirectories {
     public static void mkdir(String name) {
         RMFile newDir = new RMFile(SystemPaths.toReal(SystemPaths.getCVP())).resolve(name);
         if (newDir.exists()) {
-            ErrorHandler.trigger("011", name);
+            ErrorHandler.trigger(ErrorC.DIRECTORY_ALREADY_EXISTS, name);
             return;
         }
         if (newDir.mkdir()) IO.output("[SYSTEM]> Directory created: " + name);
-        else ErrorHandler.trigger("010", name);
+        else ErrorHandler.trigger(ErrorC.COULD_NOT_CREATE_DIRECTORY, name);
     }
 
     public static void rmdir(String name) {
         RMFile dir = new RMFile(SystemPaths.toReal(SystemPaths.getCVP())).resolve(name);
         if (!dir.exists() || !dir.isDir()) {
-            ErrorHandler.trigger("010", name);
+            ErrorHandler.trigger(ErrorC.DIRECTORY_DOES_NOT_EXIST, name);
             return;
         }
         if (dir.delete()) IO.output("[SYSTEM]> Directory deleted: " + name);
-        else ErrorHandler.trigger("013", name);
+        else ErrorHandler.trigger(ErrorC.COULD_NOT_DELETE_DIRECTORY, name);
     }
 
     public static void ld() {

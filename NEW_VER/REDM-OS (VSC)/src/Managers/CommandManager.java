@@ -33,7 +33,7 @@ public class CommandManager {
 
         Command c = complex.get(p.name());
         if (c == null) {
-            ErrorHandler.trigger("024", input);
+            ErrorHandler.trigger(ErrorC.UNKNOWN_COMMAND, input);
             return;
         }
 

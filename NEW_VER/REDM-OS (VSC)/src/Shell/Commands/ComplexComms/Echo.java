@@ -5,6 +5,7 @@ import java.util.Map;
 
 import Managers.ErrorHandler;
 import Shell.Commands.Command;
+import System.ErrorC;
 import System.SystemState;
 
 public class Echo implements Command{
@@ -28,7 +29,7 @@ public class Echo implements Command{
     public void execute(List<String> args, Map<String, String> flags) {
 
         if (args.isEmpty()) {
-            ErrorHandler.trigger("RM-025", "");
+            ErrorHandler.trigger(ErrorC.MISSING_ARGUMENT, null);
             return;
         }
 

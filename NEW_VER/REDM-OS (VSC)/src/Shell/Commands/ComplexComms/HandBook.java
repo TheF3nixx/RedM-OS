@@ -6,6 +6,7 @@ import IO.*;
 import Managers.CommandManager;
 import Managers.ErrorHandler;
 import Shell.Commands.Command;
+import System.ErrorC;
 
 public class HandBook implements Command{
 
@@ -46,7 +47,7 @@ public class HandBook implements Command{
         //Si no es un comando simple, es uno complejo
         Command cmd = CommandManager.getComplexCommand(target);
         if(cmd == null){
-            ErrorHandler.trigger("024", target);
+            ErrorHandler.trigger(ErrorC.UNKNOWN_COMMAND, target);
             return;
         }
 

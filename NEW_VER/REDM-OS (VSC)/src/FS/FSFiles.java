@@ -2,6 +2,7 @@ package FS;
 
 import IO.IO;
 import Managers.ErrorHandler;
+import System.ErrorC;
 import System.SystemPaths;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -46,7 +47,7 @@ public class FSFiles {
 
     public static void createFile(String name, String ext) {
         if (name == null || ext == null) {
-            ErrorHandler.trigger("014", name);
+            ErrorHandler.trigger(ErrorC.INVALID_PARAMETER_FOR_FILE, name);
             return;
         }
 
@@ -55,22 +56,22 @@ public class FSFiles {
 
         try {
             if (file.exists()) {
-                ErrorHandler.trigger("015", filename);
+                ErrorHandler.trigger(ErrorC.FILE_ALREADY_EXISTS, filename);
                 return;
             }
             if (file.toFile().createNewFile()) {
                 IO.output("[SYSTEM]> File created: " + filename);
             } else {
-                ErrorHandler.trigger("016", filename);
+                ErrorHandler.trigger(ErrorC.FAILED_TO_CREATE_FILE, filename);
             }
         } catch (IOException e) {
-            ErrorHandler.trigger("016", filename);
+            ErrorHandler.trigger(ErrorC.FAILED_TO_CREATE_FILE, filename);
         }
     }
 
     public static void createEditableFile(String filename) {
         if (filename == null) {
-            ErrorHandler.trigger("014", filename);
+            ErrorHandler.trigger(ErrorC.INVALID_PARAMETER_FOR_FILE, filename);
             return;
         }
 
@@ -106,7 +107,7 @@ public class FSFiles {
             }
 
         } catch (IOException e) {
-            ErrorHandler.trigger("017", filename);
+            ErrorHandler.trigger(ErrorC.FAILED_TO_ACCESS_FILE, filename);
         }
     }
 
@@ -116,7 +117,7 @@ public class FSFiles {
 
         try {
             if (!file.exists() || !file.isFile()) {
-                ErrorHandler.trigger("019", filename);
+                ErrorHandler.trigger(ErrorC.FILE_DOES_NOT_EXIST, filename);
                 return;
             }
 
@@ -139,7 +140,7 @@ public class FSFiles {
 
         } catch (Exception e) {
             IO.output("[DEBUG] " + e.getClass().getSimpleName() + ": " + e.getMessage());
-            ErrorHandler.trigger("023", filename);
+            ErrorHandler.trigger(ErrorC.COULD_NOT_MOVE_FILE, filename);
         }
     }
 
@@ -148,14 +149,14 @@ public class FSFiles {
         RMFile file = resolveToRMFile(filename);
 
         if (!file.exists() || !file.isFile()) {
-            ErrorHandler.trigger("019", filename);
+            ErrorHandler.trigger(ErrorC.FILE_DOES_NOT_EXIST, filename);
             return;
         }
 
         if (file.delete()) {
             IO.output("[SYSTEM]> File successfully deleted.");
         } else {
-            ErrorHandler.trigger("023", filename);
+            ErrorHandler.trigger(ErrorC.COULD_NOT_MOVE_FILE, filename);
         }
     }
 
@@ -168,7 +169,7 @@ public class FSFiles {
             
 
             if (!Files.exists(trashFile) || !Files.exists(metaFile)) {
-                ErrorHandler.trigger("019", trashName);
+                ErrorHandler.trigger(ErrorC.FILE_DOES_NOT_EXIST, trashName);
                 return;
             }
 
@@ -184,7 +185,7 @@ public class FSFiles {
             }
 
             if (originalPath == null) {
-                ErrorHandler.trigger("024", trashName);
+                ErrorHandler.trigger(ErrorC.INVALID_SOURCE, trashName);
                 return;
             }
 
@@ -201,7 +202,7 @@ public class FSFiles {
             IO.output("[SYSTEM]> File restored to original location.");
 
         } catch (IOException e) {
-            ErrorHandler.trigger("023", trashName);
+            ErrorHandler.trigger(ErrorC.COULD_NOT_MOVE_FILE, trashName);
         }
     }
 
@@ -210,7 +211,7 @@ public class FSFiles {
         RMFile dst = resolveToRMFile(dest);
 
         if (!src.exists() || !src.isFile()) {
-            ErrorHandler.trigger("020", source);
+            ErrorHandler.trigger(ErrorC.INVALID_SOURCE, source);
             return;
         }
 
@@ -229,9 +230,9 @@ public class FSFiles {
                 return;
             }
 
-            ErrorHandler.trigger("021", dest);
+            ErrorHandler.trigger(ErrorC.COULD_NOT_COPY, dest);
         } catch (IOException e) {
-            ErrorHandler.trigger("021", source);
+            ErrorHandler.trigger(ErrorC.COULD_NOT_COPY, source);
         }
     }
 
@@ -240,7 +241,7 @@ public class FSFiles {
         RMFile dst = resolveToRMFile(dest);
 
         if (!src.exists() || !src.isFile()) {
-            ErrorHandler.trigger("020", source);
+            ErrorHandler.trigger(ErrorC.INVALID_SOURCE, source);
             return;
         }
 
@@ -259,9 +260,9 @@ public class FSFiles {
                 return;
             }
 
-            ErrorHandler.trigger("023", dest);
+            ErrorHandler.trigger(ErrorC.COULD_NOT_MOVE_FILE, dest);
         } catch (IOException e) {
-            ErrorHandler.trigger("023", dest);
+            ErrorHandler.trigger(ErrorC.COULD_NOT_MOVE_FILE, dest);
         }
     }
 
@@ -269,14 +270,14 @@ public class FSFiles {
         RMFile file = resolveToRMFile(filename);
 
         if (!file.exists() || !file.isFile()) {
-            ErrorHandler.trigger("019", filename);
+            ErrorHandler.trigger(ErrorC.FILE_DOES_NOT_EXIST, filename);
             return;
         }
 
         try {
             Files.lines(file.toFile().toPath()).forEach(IO::output);
         } catch (IOException e) {
-            ErrorHandler.trigger("017", filename);
+            ErrorHandler.trigger(ErrorC.FAILED_TO_ACCESS_FILE, filename);
         }
     }
 }

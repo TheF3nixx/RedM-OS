@@ -3,6 +3,7 @@ package Shell.Commands.ComplexComms;
 import java.util.List;
 import java.util.Map;
 
+import System.ErrorC;
 import System.SystemCapabilities;
 import System.Toggle.*;
 import IO.*;
@@ -47,14 +48,14 @@ public class Toggle implements Command{
         try{
             ToggleCategory.valueOf(category);
         }catch(Exception e){
-            ErrorHandler.trigger("028", category);
+            ErrorHandler.trigger(ErrorC.CATEGORY_DOES_NOT_EXIST, category);
             return;
         }
         //Comprobamos si existe el nombre
         try{
             SystemCapabilities.valueOf(name);
         }catch(Exception e){
-            ErrorHandler.trigger("029", name);
+            ErrorHandler.trigger(ErrorC.CAPABILITY_DOES_NOT_EXIST, name);
             return;
         }
         //Activamos o desactivamos según el argumento
@@ -62,7 +63,7 @@ public class Toggle implements Command{
         if(state.equalsIgnoreCase("ON")) enabled = true;
         else if(state.equalsIgnoreCase("OFF")) enabled = false;
         else{
-            ErrorHandler.trigger("026", state);
+            ErrorHandler.trigger(ErrorC.STATE_ERROR, state);
             return;
         }
         //Guardamos el estado en el map creando "la llave"

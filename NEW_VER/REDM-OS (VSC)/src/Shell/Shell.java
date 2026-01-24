@@ -43,7 +43,7 @@ public class Shell{
                     SystemState.setBooted(true);
                     break;
                 default:
-                    ErrorHandler.trigger("007", "");
+                    ErrorHandler.trigger(ErrorC.INVALID_BOOT_MODE, null);
             }    
         }
         //Esta es la interfaz de la terminal en sí

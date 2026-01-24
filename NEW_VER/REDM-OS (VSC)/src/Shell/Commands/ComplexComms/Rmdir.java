@@ -6,6 +6,7 @@ import java.util.Map;
 import FS.FSManager;
 import Managers.ErrorHandler;
 import Shell.Commands.Command;
+import System.ErrorC;
 
 public class Rmdir implements Command{
     @Override
@@ -27,7 +28,7 @@ public class Rmdir implements Command{
     public void execute(List<String> args, Map<String, String> flags) {
 
         if (args.isEmpty()) {
-            ErrorHandler.trigger("RM-025", "");
+            ErrorHandler.trigger(ErrorC.MISSING_ARGUMENT, null);
             return;
         }
 

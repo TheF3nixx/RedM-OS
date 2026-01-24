@@ -1,6 +1,8 @@
 package IO;
 
 import Managers.ErrorHandler;
+import System.ErrorC;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,7 +27,7 @@ public class IO {
             try{
                 return Integer.parseInt(input(text));
             }catch(NumberFormatException e){
-                ErrorHandler.trigger("001", "");
+                ErrorHandler.trigger(ErrorC.INVALID_NUMBER, null);
             }
         }
     }
@@ -35,7 +37,7 @@ public class IO {
             try{
                 return Float.parseFloat(input(text));
             }catch(NumberFormatException e){
-                ErrorHandler.trigger("001", "");
+                ErrorHandler.trigger(ErrorC.INVALID_NUMBER, null);
             }
         }
     }
@@ -49,7 +51,7 @@ public class IO {
         while(true){
             int n = inputInt(text);
             if(n < min || n > max){
-                ErrorHandler.trigger("002", "(" + min + "-" + max + ")");
+                ErrorHandler.trigger(ErrorC.OUT_OF_BOUNDS, "(" + min + "-" + max + ")");
             }else return n;
         }
     }
@@ -135,12 +137,12 @@ public class IO {
 	System.out.println("[DEBUG]> Searching in: " + fileToView.getAbsolutePath());
 
 	if(!fileToView.exists()){
-            ErrorHandler.trigger("003", filename);
+            ErrorHandler.trigger(ErrorC.ARCHIVE_NOT_FOUND, filename);
             return;
 	}
 		
 	if(fileToView.isDirectory()){
-            ErrorHandler.trigger("004", filename);
+            ErrorHandler.trigger(ErrorC.FILE_IS_A_DIRECTORY, filename);
             return;
 	}
 		
@@ -151,9 +153,9 @@ public class IO {
                 System.out.println(line);
             }
         }catch(FileNotFoundException ex){
-            ErrorHandler.trigger("005", filename);
+            ErrorHandler.trigger(ErrorC.FILE_NOT_FOUND, filename);
 	}catch(IOException ex){
-            ErrorHandler.trigger("006", filename);
+            ErrorHandler.trigger(ErrorC.COULD_NOT_READ, filename);
         }
     }
 
